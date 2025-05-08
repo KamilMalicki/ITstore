@@ -1,17 +1,23 @@
 [
-    {
-      "id": 1,
-      "name": "Koszulka IT",
-      "price": "49.99 zł",
-      "image": "https://via.placeholder.com/300x200?text=Koszulka+IT",
-      "description": "Czarna koszulka z napisem '404 Not Found'."
-    },
-    {
-      "id": 2,
-      "name": "Kubek programisty",
-      "price": "29.99 zł",
-      "image": "https://via.placeholder.com/300x200?text=Kubek+programisty",
-      "description": "Porcelanowy kubek z kodem źródłowym."
-    }
-  ]
-  
+  {
+    "id": 1,
+    "name": "Koszulka IT",
+    "price": "49.99 zł",
+    "image": "https://via.placeholder.com/300x200?text=Koszulka+IT",
+    "description": "Czarna koszulka z napisem '404 Not Found'."
+  },
+  {
+    "id": 2,
+    "name": "Kubek programisty",
+    "price": "29.99 zł",
+    "image": "https://via.placeholder.com/300x200?text=Kubek+programisty",
+    "description": "Porcelanowy kubek z kodem źródłowym."
+  },
+  {
+    "id": 1746697727717,
+    "name": "kubek2",
+    "price": "999.99 zł",
+    "image": "data:image/webp;base64,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",
+    "description": "coś"
+  }
+]
