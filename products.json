@@ -12,5 +12,47 @@
     "price": "29.99 zł",
     "image": "https://via.placeholder.com/300x200?text=Kubek+programisty",
     "description": "Porcelanowy kubek z kodem źródłowym."
+  },
+  {
+    "id": 3,
+    "name": "Plakat z kodem",
+    "price": "19.99 zł",
+    "image": "https://via.placeholder.com/300x200?text=Plakat+z+kodem",
+    "description": "Plakat z ulubionym fragmentem kodu."
+  },
+  {
+    "id": 4,
+    "name": "Brelok do kluczy",
+    "price": "9.99 zł",
+    "image": "https://via.placeholder.com/300x200?text=Brelok+do+kluczy",
+    "description": "Brelok w kształcie klucza do kodu."
+  },
+  {
+    "id": 5,
+    "name": "Podkładka pod mysz",
+    "price": "39.99 zł",
+    "image": "https://via.placeholder.com/300x200?text=Podkładka+pod+mysz",
+    "description": "Podkładka z motywem kodu."
+  },
+  {
+    "id": 6,
+    "name": "Torba na laptopa",
+    "price": "99.99 zł",
+    "image": "https://via.placeholder.com/300x200?text=Torba+na+laptopa",
+    "description": "Stylowa torba na laptopa z kieszenią na akcesoria."
+  },
+  {
+    "id": 7,
+    "name": "Zestaw naklejek",
+    "price": "14.99 zł",
+    "image": "https://via.placeholder.com/300x200?text=Zestaw+naklejek",
+    "description": "Zestaw naklejek z motywami programistycznymi."
+  },
+  {
+    "id": 8,
+    "name": "Książka o programowaniu",
+    "price": "89.99 zł",
+    "image": "https://via.placeholder.com/300x200?text=Książka+o+programowaniu",
+    "description": "Książka z najlepszymi praktykami programowania."
   }
 ]
