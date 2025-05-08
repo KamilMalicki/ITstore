@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "name": "Koszulka IT",
+      "price": "49.99 zł",
+      "image": "https://via.placeholder.com/300x200?text=Koszulka+IT",
+      "description": "Czarna koszulka z napisem '404 Not Found'."
+    },
+    {
+      "id": 2,
+      "name": "Kubek programisty",
+      "price": "29.99 zł",
+      "image": "https://via.placeholder.com/300x200?text=Kubek+programisty",
+      "description": "Porcelanowy kubek z kodem źródłowym."
+    }
+  ]
+  
