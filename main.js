@@ -11,7 +11,7 @@ fetch('products.json')
         <h2 class="text-xl font-semibold">${p.name}</h2>
         <p class="text-gray-700 mb-2">${p.description}</p>
         <p class="text-green-600 font-bold mb-4">${p.price}</p>
-        <a href="mailto:twoj@email.com?subject=Zamówienie - ${encodeURIComponent(p.name)}"
+        <a href="mailto:kamilpusiu2008@email.com?subject=Zamówienie - ${encodeURIComponent(p.name)}"
            class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
           Zamów przez Gmail
         </a>
