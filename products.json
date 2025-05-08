@@ -10,7 +10,7 @@
     "id": 2,
     "name": "Kubek programisty",
     "price": "29.99 zł",
-    "image": "https://via.placeholder.com/300x200?text=Kubek+programisty",
+    "image": "assets/kubek.webp/300x200?text=Kubek+programisty",
     "description": "Porcelanowy kubek z kodem źródłowym."
   },
   {
