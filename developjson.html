@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Developer JSON – Sklep</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-6">
+  <h1 class="text-3xl font-bold mb-4">🛠️ Edytor products.json</h1>
+
+  <!-- Lista produktów -->
+  <div id="editor" class="space-y-4 mb-6"></div>
+
+  <!-- Formularz dodawania -->
+  <div class="bg-gray-800 p-4 rounded mb-6">
+    <h2 class="text-xl font-semibold mb-2">Dodaj nowy produkt</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <input id="new-name" class="p-2 rounded bg-gray-700" placeholder="Nazwa">
+      <input id="new-price" class="p-2 rounded bg-gray-700" placeholder="Cena">
+      <input id="new-image" class="p-2 rounded bg-gray-700" placeholder="Link do obrazka">
+      <input id="new-desc" class="p-2 rounded bg-gray-700" placeholder="Opis">
+    </div>
+    <button onclick="addProduct()" class="mt-4 bg-green-600 hover:bg-green-700 px-4 py-2 rounded">➕ Dodaj produkt</button>
+  </div>
+
+  <!-- Przyciski -->
+  <div class="flex gap-4">
+    <button onclick="downloadJSON()" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded">⬇️ Pobierz JSON</button>
+    <button onclick="resetProducts()" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded">🗑️ Wyczyść wszystko</button>
+  </div>
+
+  <script>
+    let products = [];
+
+    function loadProducts() {
+      fetch('products.json')
+        .then(res => res.json())
+        .then(data => {
+          products = data;
+          renderEditor();
+        });
+    }
+
+    function renderEditor() {
+      const editor = document.getElementById('editor');
+      editor.innerHTML = '';
+      products.forEach((p, i) => {
+        const item = document.createElement('div');
+        item.className = "bg-gray-800 p-4 rounded";
+
+        item.innerHTML = `
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input value="${p.name}" class="p-2 rounded bg-gray-700" onchange="products[${i}].name=this.value">
+            <input value="${p.price}" class="p-2 rounded bg-gray-700" onchange="products[${i}].price=this.value">
+            <input value="${p.image}" class="p-2 rounded bg-gray-700" onchange="products[${i}].image=this.value">
+            <input value="${p.description}" class="p-2 rounded bg-gray-700" onchange="products[${i}].description=this.value">
+          </div>
+          <button onclick="deleteProduct(${i})" class="mt-2 bg-red-600 hover:bg-red-700 px-4 py-1 rounded">Usuń</button>
+        `;
+        editor.appendChild(item);
+      });
+    }
+
+    function addProduct() {
+      const name = document.getElementById('new-name').value;
+      const price = document.getElementById('new-price').value;
+      const image = document.getElementById('new-image').value;
+      const desc = document.getElementById('new-desc').value;
+
+      if (!name || !price) return alert("Nazwa i cena są wymagane");
+
+      products.push({
+        id: Date.now(),
+        name, price, image, description: desc
+      });
+
+      document.getElementById('new-name').value = '';
+      document.getElementById('new-price').value = '';
+      document.getElementById('new-image').value = '';
+      document.getElementById('new-desc').value = '';
+
+      renderEditor();
+    }
+
+    function deleteProduct(index) {
+      products.splice(index, 1);
+      renderEditor();
+    }
+
+    function downloadJSON() {
+      const blob = new Blob([JSON.stringify(products, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'products.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function resetProducts() {
+      if (confirm("Na pewno usunąć wszystkie produkty?")) {
+        products = [];
+        renderEditor();
+      }
+    }
+
+    loadProducts();
+  </script>
+</body>
+</html>
