@@ -5,5 +5,19 @@
     "price": "49.99 zł",
     "image": "assets/404.jpg",
     "description": "Czarna koszulka z napisem '404 Not Found'."
+  },
+  {
+    "id": 2,
+    "name": "Kubek IT",
+    "price": "29.99 zł",
+    "image": "assets/404.jpg",
+    "description": "Kubek z napisem '404 Not Found'."
+  },
+  {
+    "id": 3,
+    "name": "Plakat C++",
+    "price": "19.99 zł",
+    "image": "assets/cpp.jpg",
+    "description": "Plakat C++."
   }
 ]
