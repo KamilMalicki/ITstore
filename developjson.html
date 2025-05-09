@@ -25,12 +25,27 @@
 
   <!-- Przyciski -->
   <div class="flex gap-4">
+    <button onclick="saveJSON()" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded">💾 Zapisz na serwerze</button>
     <button onclick="downloadJSON()" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded">⬇️ Pobierz JSON</button>
     <button onclick="resetProducts()" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded">🗑️ Wyczyść wszystko</button>
   </div>
 
   <script>
     let products = [];
+
+    function saveJSON() {
+      fetch('backend.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ products })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) alert('Zapisano!');
+        else alert('Błąd: ' + (data.error || 'Nieznany błąd'));
+      })
+      .catch(err => alert('Błąd połączenia: ' + err));
+    }
 
     function loadProducts() {
       fetch('products.json')
