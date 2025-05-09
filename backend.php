@@ -1,4 +1,3 @@
-<?php
 header('Content-Type: application/json');
 $data = json_decode(file_get_contents('php://input'), true);
 
@@ -8,4 +7,3 @@ if (file_put_contents('products.json', json_encode($data['products'], JSON_PRETT
     http_response_code(500);
     echo json_encode(['error' => 'Błąd zapisu']);
 }
-?>
