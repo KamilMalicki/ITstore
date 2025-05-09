@@ -5,12 +5,5 @@
     "price": "49.99 zł",
     "image": "assets/404.jpg",
     "description": "Czarna koszulka z napisem '404 Not Found'."
-  },
-  {
-    "id": 2,
-    "name": "Kubek programisty",
-    "price": "29.99 zł",
-    "image": "assets/kubek.jpg",
-    "description": "Porcelanowy kubek z kodem źródłowym."
   }
 ]
