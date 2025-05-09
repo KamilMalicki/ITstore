@@ -10,8 +10,8 @@
     "id": 2,
     "name": "Kubek IT",
     "price": "29.99 zł",
-    "image": "assets/404.jpg",
-    "description": "Kubek z napisem '404 Not Found'."
+    "image": "assets/kubek.jpg",
+    "description": "Kubek IT'."
   },
   {
     "id": 3,
